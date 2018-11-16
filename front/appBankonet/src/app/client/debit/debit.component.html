@@ -1,0 +1,26 @@
+<p>
+  Bienvenue dans l'espace débit !
+</p>
+
+<form [formGroup]="debitForm" (ngSubmit)="onSubmit()" novalidate>​
+
+  <label for="compte">Veuillez rentrer le numéro du compte que vous souhaitez débiter</label><br>
+  <select formControlName="compte">
+    <option *ngFor="let compte of client?.comptesEpargne" value="{{compte.id}}">
+      {{compte?.id}} {{compte?.intitule}}
+    </option>
+    <option>
+      {{client?.compteCourant.id}} {{client?.compteCourant.intitule}}
+    </option>
+  </select>
+  <br>
+  <label for="montant">Veuillez indiquer le montant que vous souhaitez débiter</label><br>
+  <input type="number" placeholder="" formControlName="montant" min="0">​<br>
+  <br>
+  <button type="submit" [disabled]="!debitForm.valid">Submit</button>​
+
+</form>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

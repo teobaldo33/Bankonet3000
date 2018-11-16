@@ -1,0 +1,127 @@
+DOC ASCII DOC
+
+saut de ligne : +
+[%hardbreaks] : en tete pour saut de ligne persistant
+
+label structurant :
+doivent etre en majuscule et suivi de ":"
+NOTE | TIP | IMPORTANT | CAUTION | WARNING
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+traitement de texte : gras, italique, fond gris, mot ou partie de mot:
+
+gras sur un mot et sur une partie de mot:
+bold *constrained* & **un**constrained
+
+italic sur mot ou partie de mot
+italic _constrained_ & __un__constrained
+
+italic ET gras sur mot et partie de mot
+bold italic *_constrained_* & **__un__**constrained
+
+fond gris sur mot ou partie de mot
+monospace `constrained` & ``un``constrainer
+
+fond gris ET gras sur mot ou partie de mot
+monospace bold `*constrained*` & ``**un**``constrained
+
+fond gris et italic sur mot et partie de mot
+monospace italic `_constrained_` & ``__un__``constrained
+
+italic ET gras ET fond gris sur mot et partie de mot
+monospace bold italic `*_constrained_*` & ``**__un__**``constrained
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+// associer une classe css à un élément [.class]#cible#
+Type the word [.userinput]#asciidoc# into the search bar.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LES ECHAPPEMENTS POUR FAIRE APPARAITRE LES CARACTERES SPECIAUX
+\*Stars* will appear as *Stars*, not as bold text.
+
+\&sect; will appear as an entity, not the &sect; symbol.
+
+\\__func__ will appear as __func__, not as emphasized text.
+
+\{two-semicolons} will appear {two-semicolons}, not resolved as ;;.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+pass:[content like #{variable} passed directly to the output] followed by normal content.
+
+content with only select substitutions applied: pass:c,a[__<{email}>__]
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+SYMBOLE SPECIAUX
+
+Copyright
+
+(C)
+&#169;
+©
+
+Registered
+
+(R)
+&#174;
+®
+
+Trademark
+
+(TM)
+&#8482;
+™
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+GESTION DES LISTES
+
+.Kizmet's Favorite Authors
+* Edgar Allen Poe
+* Sheri S. Tepper
+* Bill Bryson
+//-
+
+.Possible DefOps manual locations
+* West wood maze
+** Maze heart
+*** Reflection pool
+** Secret exit
+* Untracked file in git repository
+
+* level 1
+** level 2
+*** level 3
+**** level 4
+***** level 5
+* level 1
+
+. Protons
+. Electrons
+. Neutrons
+
+[start=9]
+ . Step four
+ . Step five
+ . Step six
+
+[%reversed]
+.Parts of an atom
+. Protons
+. Electrons
+. Neutrons
+
+
+. Step 1
+. Step 2
+.. Step 2a
+.. Step 2b
+. Step 3
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+DESCRIPTION LIST

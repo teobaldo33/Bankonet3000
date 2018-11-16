@@ -1,0 +1,79 @@
+{
+  "clients": [
+    {
+      "id": 0,
+      "firstname": "Papa",
+      "name": "Noël",
+      "email": "a@a.a",
+      "password":"a",
+      "tel":"0505050505"
+    },
+    {
+      "id": 1,
+      "firstname": "Père",
+      "name": "Fouettard",
+      "email": "b@b.b",
+      "password":"b",
+      "tel": "0606060606"
+    }
+  ],
+  "agents":[
+    {
+      "id":0,
+      "username":"Agent",
+      "password":"agent",
+      "email":"agent@banko.net"
+    }
+  ],
+  "comptesEpargne": [
+    {
+      "id": 0,
+      "intitule": "Compte Epargne du papa",
+      "solde": 25.00,
+      "interet": 0.1,
+      "solde_min": 10.00,
+      "id_client":0
+    },
+    {
+      "id": 1,
+      "intitule": "Plan epargne logement du papa",
+      "solde": 50.00,
+      "interet": 0.1,
+      "solde_min": 10.00,
+      "id_client":0
+    },
+    {
+      "id": 2,
+      "intitule": "Compte Epargne de fouettard",
+      "solde": 25.00,
+      "interet": 0.1,
+      "solde_min": 10.00,
+      "id_client":1
+    },
+    {
+      "id": 3,
+      "intitule": "Fonds d'epargne pour détruire le monde",
+      "solde": 10000.00,
+      "interet": 0.4,
+      "solde_min": 10.00,
+      "id_client":1
+    }
+    
+  ],
+  "comptesCourant":[
+    {
+      "id": 0,
+      "intitule": "Compte Courant du papa",
+      "solde": 25.00,
+      "decouvert": -200,
+      "id_client":0
+    },
+    {
+      "id": 1,
+      "intitule": "Compte Courant de fouettard",
+      "solde": 100.00,
+      "decouvert": -500,
+      "id_client":1
+    }
+  ]
+}

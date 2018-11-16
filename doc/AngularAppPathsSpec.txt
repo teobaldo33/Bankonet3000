@@ -1,0 +1,47 @@
+﻿Angular Bankonet App
+
+
+Paths : 
+
+/ 
+Home
+
+/Client  
+Page de Connexion Client si pas connecté. Si connecté renvois sur Client/X
+X: numéro client
+
+/Client/X 
+Page Client Liste des comptes 
+
+/Client/X/Compte/Y
+Page Client Details du compte
+Y: numéro compte
+
+/Client/X/Virement 
+Page Client opération virement
+
+/Client/X/Infos 
+Page d’éditions des informations personnelles du client
+
+/Agent
+Page Connexion Agent
+
+/Agent/Clients
+Page liste des clients, accés aux pages listes des comptes par client et édition client
+
+/Agent/Client/X 
+Page liste des comptes d’un client, permettant d’accéder également à l’édition du client
+
+/Agent/Client/X/EditClient
+Page d’édition/suppression du client
+
+/Agent/Client/X/AddCompteCient
+Page d’ajout de compte pour un client
+
+/Agent/AddClient
+Page d’ajout de client 
+
+
+
+
+

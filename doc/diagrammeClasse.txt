@@ -1,0 +1,154 @@
+@startuml
+
+package "BANKONET" <<Database>>{
+    class clients{
+        int ID_CLIENT - AI - PK
+        varchar(255) NOM
+        varchar(255) PRENOM
+        varchar(255) EMAIL - FK - UNIQUE
+        varchar(255) TEL
+    }
+    class comptes{
+        int ID_COMPTE - AI - PK
+        int ID_CLIENT - FK
+        varchar(2) DTYPE
+        varchar(255) INTITULE 
+        double SOLDE
+        double DECOUVERT
+        double INTERET
+        double SOLDEMIN
+    }
+}
+package "com.project.bankonet"{
+
+package "Controller" #8AFFFC {
+    class ClientController{
+        ServiceClient clientService
+        
+        +getAllClients() :ResponseEntity
+        +createClient( @RequestBody Client client) :ResponseEntity
+        +getClientById(@PathVariable(value = "id") Integer id) :ResponseEntity
+        +getClientByEmail(@PathVariable(value = "email") String email) :ResponseEntity
+        +updateClient(@PathVariable(value = "id") Integer id,
+                                       @Valid @RequestBody Client clientDetail) :ResponseEntity
+        +deleteClient(@PathVariable(value = "id") Integer id) :ResponseEntity<?>
+    }
+    class CompteCourantController{
+        ServiceCompteCourant CompteCourantService
+    
+        +createCompteCourant(@RequestBody CompteCourant compte) :ResponseEntity
+        +getAllCounts() :ResponseEntity
+        +getCountById(@PathVariable(value = "id") int id) :ResponseEntity
+        +deleteCompteCourant(@PathVariable(value = "id") Integer id) :ResponseEntity<?>
+        +updateCompteCourant(@PathVariable(value = "id") Integer id,
+                                       @Valid @RequestBody CompteCourant compteDetail) :ResponseEntity
+    }
+    class CompteEpargneController{
+        ServiceCompteEpargne CompteEpargneService
+        
+        +createCompteEpargne(@RequestBody CompteEpargne compte) :ResponseEntity
+        +getAllCounts() :ResponseEntity
+        +getCountById(@PathVariable(value = "id") int id) :ResponseEntity
+        +deleteCompteEpargne(@PathVariable(value = "id") Integer id) :ResponseEntity<?>
+        +updateCompteEpargne(@PathVariable(value = "id") Integer id,
+                                              @Valid @RequestBody CompteEpargne compteDetail) :ResponseEntity
+    }
+}
+package "Service" #E231FF {
+    class ServiceClient {
+        ClientRepository clientRepository
+    
+        +getAllClients() :List<Client>
+        +createClient( Client client) :Client
+        +getClientById(int id) :Client
+        +getClientByEmail(String email) :Client
+        +updateClient(int id, Client clientDetail) :Client
+        +deleteClient(int id) :ResponseEntity<?>
+    }
+    class ServiceCompteCourant{
+        CompteCourantRepository CompteCourantRepo
+        
+        +createCompteCourant(CompteCourant compte) :CompteCourant
+        +getAllCounts() :List<CompteCourant>
+        +getCompteById(int id) :CompteCourant
+        +deleteCompteCourant(int id) :ResponseEntity<?>
+        +updateCount(int id, CompteCourant compteDetail) :CompteCourant
+    }
+    class ServiceCompteEpargne{
+        CompteEpargneRepository CompteEpargneRepo
+        
+        +createCompteEpargne(CompteEpargne compte) :CompteEpargne
+        +getAllCounts() :List<CompteEpargne>
+        +getCompteById(int id) :CompteEpargne
+        +deleteCompteEpargne(int id) :ResponseEntity<?>
+        +updateCount(int id, CompteEpargne compteDetail) :CompteEpargne
+    }
+
+}
+package "Repository" #FFBBE0 {
+    interface ClientRepository {
+        +findAll() :List<Client>
+        +save(Client client) :Client
+        +findById(int id) :Client
+        +findByEmail(String email) :Client
+        +delete(Client client) 
+    }
+    interface CompteCourantRepository{
+        +findAll() :List<CompteCourant>
+        +save(CompteCourant compteCourant) :CompteCourant
+        +findById(int id) :CompteCourant
+        +delete(CompteCourant compteCourant)
+    }
+    interface CompteEpargneRepository{
+        +findAll() :CompteEpargne
+        +save(CompteEpargne compteEpargne) :CompteEpargne
+        +findById(int id) :CompteEpargne
+        +delete(CompteEpargne compteEpargne)
+    }
+    
+}
+
+package "Modèle" #00FF8E{
+    class Client {
+        private int idClient
+        private List<Compte> cc
+        private String nom
+        private String prenom
+        private String email
+        private String tel
+    }
+    class Compte {
+     protected int idCompte
+     protected String nomCompte
+     protected double solde
+     protected int clientId
+     protected String dType
+     protected Client client
+    }
+    class CompteCourant{
+        private double decouvertAutoriser
+    }
+    class CompteEpargne{
+        private int solde_min
+        private int interet
+    }
+    Compte <|-- CompteCourant 
+    Compte <|-- CompteEpargne
+    
+    
+}   
+    
+    interface JpaRepository
+    BANKONET <|-- JpaRepository
+    JpaRepository <|-- CompteCourantRepository
+    JpaRepository <|-- CompteEpargneRepository
+    JpaRepository <|-- ClientRepository
+    ClientRepository <|-- ServiceClient 
+    CompteCourantRepository <|-- ServiceCompteCourant
+    CompteEpargneRepository <|-- ServiceCompteEpargne
+    ServiceClient <|-- ClientController
+    ServiceCompteCourant <|-- CompteCourantController
+    ServiceCompteEpargne <|-- CompteEpargneController
+    
+}
+@enduml

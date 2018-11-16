@@ -1,0 +1,40 @@
+<p>
+  Bonjour {{client?.firstname}} {{client?.name}} !!
+</p>
+
+<p>Voice la liste de vos comptes</p>
+
+<p>Compte Courant</p>
+<table>
+  <tr>
+    <td>Numéro de compte</td>
+    <td>Intitule</td>
+    <td>Solde</td>
+    <td>Decouvert Autorisé</td>
+  </tr>
+  <tr>
+    <td>{{client?.compteCourant?.id}}</td>
+    <td>{{client?.compteCourant?.intitule}}</td>
+    <td>{{client?.compteCourant?.solde}} €</td>
+    <td>{{client?.compteCourant?.decouvert}} €</td>
+  </tr>
+
+</table>
+
+<p>Comptes Epargnes</p>
+<table>
+  <tr>
+    <td>Numéro de compte</td>
+    <td>Intitule</td>
+    <td>Solde</td>
+    <td>Interêts</td>
+    <td>Solde minimum</td>
+  </tr>
+  <tr *ngFor="let compte of client.comptesEpargne">
+    <td>{{compte?.id}}</td>
+    <td>{{compte?.intitule}}</td>
+    <td>{{compte?.solde}} €</td>
+    <td>{{compte?.interet}}</td>
+    <td>{{compte?.solde_min}} €</td>
+  </tr>
+</table>

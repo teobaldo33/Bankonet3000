@@ -1,0 +1,48 @@
+
+<p>
+  Voici les comptes du client n°{{client?.id_client}}, nom : {{client?.name}} {{client?.firstname}}.
+</p>
+
+<button (click)="onAddCompte()" type="button">Ajouter un Compte</button>
+
+<p>Compte Courant</p>
+<table>
+  <tr>
+    <th width="10%">Id</th>
+    <th>Intitule</th>
+    <th>Solde</th>
+    <th>Decouvert Autorisé</th>
+  </tr>
+  <tr>
+    <td>{{client?.compteCourant?.id}}</td>
+    <td>{{client?.compteCourant?.intitule}}</td>
+    <td>{{client?.compteCourant?.solde}} €</td>
+    <td>{{client?.compteCourant?.decouvert}} €</td>
+    <td (click)="onDelCompte(client.compteCourant.id,client.compteCourant.dType)">DEL</td>
+  </tr>
+
+</table>
+
+<p>Comptes Epargnes</p>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Intitule</th>
+    <th>Solde</th>
+    <th>Interêts</th>
+    <th>Solde minimum</th>
+  </tr>
+  <tr *ngFor="let compte of client?.comptesEpargne">
+    <td>{{compte?.id}}</td>
+    <td>{{compte?.intitule}}</td>
+    <td>{{compte?.solde}} €</td>
+    <td>{{compte?.interet}}</td>
+    <td>{{compte?.solde_min}} €</td>
+    <td (click)="onDelCompte(compte.id,compte.dType)" >DEL</td>
+  </tr>
+</table>
+
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

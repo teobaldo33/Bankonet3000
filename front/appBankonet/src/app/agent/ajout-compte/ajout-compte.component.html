@@ -1,0 +1,44 @@
+<form [formGroup]="ajoutCompteCourantForm" (ngSubmit)="onSubmit()" novalidate>​
+
+  <input formControlName="typeCompte" type="radio" (click)="lala = clickEpargne()" name="typeCompte" value="epargne" checked="checked"> Epargne<br>
+  <input formControlName="typeCompte" type="radio" (click)="lala = clickCourant()" name="typeCompte" value="courant"> Courant
+
+  <div *ngIf="lala === 'courant'" id="formCourant" class="">
+      <label for="intituleCourant">Intitule : </label><br>
+      <input placeholder="" formControlName="intituleCourant">​<br>
+    
+      <label for="soldeCourant">Solde : </label><br>
+      <input placeholder="" formControlName="soldeCourant">​<br>
+    
+      <label for="decouvertCourant">Decouvert autorisé : </label><br>
+      <input placeholder="" formControlName="decouvertCourant">​<br>
+
+      <button type="submit" [disabled]="!ajoutCompteCourantForm.valid">Envoyer</button>​
+
+  </div>
+</form>
+<form [formGroup]="ajoutCompteEpargneForm" (ngSubmit)="onSubmit()" novalidate>
+  <div *ngIf="lala === 'epargne'" id="formEpargne" class="">
+      <label for="intituleEpargne">Intitule : </label><br>
+      <input placeholder="" formControlName="intituleEpargne">​<br>
+    
+      <label for="soldeEpargne">Solde : </label><br>
+      <input placeholder="" formControlName="soldeEpargne">​<br>
+    
+      <label for="interetEpargne">Interets : </label><br>
+      <input placeholder="" formControlName="interetEpargne">​<br>
+    
+      <label for="soldeMinEpargne">Solde minimum : </label><br>
+      <input placeholder="" formControlName="soldeMinEpargne">​<br>
+
+      <br>
+      <button type="submit" [disabled]="!ajoutCompteEpargneForm.valid">Envoyer</button>​
+  </div>
+  
+  
+
+</form>
+  
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

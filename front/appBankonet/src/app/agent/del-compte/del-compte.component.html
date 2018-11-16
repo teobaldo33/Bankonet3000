@@ -1,0 +1,20 @@
+<p>
+  Vous souhaitez supprimer le compte : {{compte?.id}}
+</p>
+
+<p *ngIf="!delOk">
+  Navré mais les conditions pour la suppression du compte ne sont pas remplies :<br>
+  - Le solde du compte courant du client est probablement dans le négatif.
+  - Vous voulez supprimer le compte courant alors que le client possède encore des comptes épargne.
+</p>
+
+<p *ngIf="delOk == true">
+  Confirmez vous la suppression du compte ?
+  <br>
+  <button type="button" (click)="onOui()">Oui</button>
+  <button type="button" (click)="onNon()">Non</button>
+</p>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

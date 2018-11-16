@@ -1,0 +1,33 @@
+<p>
+  Vous pouvez modifier vos informations personelles dans cet espace !
+</p>
+
+<p>
+  Votre adresse email : {{client?.email}}
+  <br>
+  Votre numéro de télépone : {{client?.tel}}
+</p>
+
+<p>
+  Remplir ce formulaire pour modifier ces infos :
+</p>
+
+<form [formGroup]="editInfosForm" (ngSubmit)="onSubmit()" novalidate>​
+
+  <label for="email">Votre email : </label><br>
+  <input placeholder="" formControlName="email">​<br>
+
+  <label for="tel">Votre tel : </label><br>
+  <input placeholder="" formControlName="tel">​<br>
+
+  <button type="submit" [disabled]="!editInfosForm.valid">Submit</button>​
+
+</form>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+
+
+
+

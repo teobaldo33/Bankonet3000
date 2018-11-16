@@ -1,0 +1,19 @@
+<p>
+  Vous souhaitez supprimer le client : {{client?.id}}
+</p>
+
+<p *ngIf="!delOk">
+  Navré mais les conditions pour la suppression du client ne sont pas remplies :<br>
+  - Le solde du compte courant du client est probablement dans le négatif.
+</p>
+
+<p *ngIf="delOk == true">
+  Confirmez vous la suppression du client ?
+  <br>
+  <button type="button" (click)="onOui()">Oui</button>
+  <button type="button" (click)="onNon()">Non</button>
+</p>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

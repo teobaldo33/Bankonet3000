@@ -1,0 +1,29 @@
+<p>
+    Vous pouvez modifier les informations personelles du client {{client?.name}} {{client?.firstname}} !
+</p>
+  
+  <p>
+    email client : {{client?.email}}
+    <br>
+    télépone client : {{client?.tel}}
+  </p>
+  
+  <p>
+    Remplir ce formulaire pour modifier ces infos :
+  </p>
+  
+  <form [formGroup]="editInfosForm" (ngSubmit)="onSubmit()" novalidate>​
+  
+    <label for="email">Email : </label><br>
+    <input placeholder="" formControlName="email">​<br>
+  
+    <label for="tel">Tel : </label><br>
+    <input placeholder="" formControlName="tel">​<br>
+  
+    <button type="submit" [disabled]="!editInfosForm.valid">Submit</button>​
+  
+  </form>
+  
+  <div *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>

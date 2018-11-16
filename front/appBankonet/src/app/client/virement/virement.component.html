@@ -1,0 +1,38 @@
+<p>
+  Bienvenue dans l'espace virement !
+</p>
+
+<form [formGroup]="virementForm" (ngSubmit)="onSubmit()" novalidate>​
+
+  <label for="compteADebiter">Veuillez rentrer le numéro du compte que vous souhaitez débiter</label><br>
+  <select formControlName="compteADebiter">
+    <option *ngFor="let compte of client?.comptesEpargne" value="{{compte.id}}">
+      {{compte?.id}}/{{compte?.intitule}}
+    </option>
+    <option>
+      {{client?.compteCourant.id}}/{{client?.compteCourant.intitule}}
+    </option>
+  </select>
+  <br>
+  <label for="compteACrediter">Veuillez rentrer le numéro du compte que vous souhaitez créditer</label><br>
+  <select formControlName="compteACrediter">
+    <option *ngFor="let compte of client?.comptesEpargne" value="{{compte.id}}">
+      {{compte?.id}}/{{compte?.intitule}}
+    </option>
+    <option>
+      {{client?.compteCourant.id}}/{{client?.compteCourant.intitule}}
+    </option>
+  </select>
+  <br>
+
+  <br>
+  <label for="montant" min="0">Veuillez indiquer le montant du virement</label><br>
+  <input type="number" placeholder="" formControlName="montant">​<br>
+  <br>
+  <button type="submit" [disabled]="!virementForm.valid">Submit</button>​
+
+</form>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>

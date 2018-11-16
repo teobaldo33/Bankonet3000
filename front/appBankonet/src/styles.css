@@ -1,0 +1,200 @@
+a{
+    display:inline-block;
+    padding:8px;
+    font-size:1.4rem;
+  color:rgb(255, 255, 255);
+}
+
+.logo{
+    width: 200px;
+    padding:10px;
+}
+
+body{
+  font-family: "Courier New", Courier, monospace;
+  color: white !important;
+}
+
+#myInput {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJtSURBVGhD7dm7jw1hHMbxk7iGQkGIlYhCKGiEgijcFSgo/CMKtahdQituEZQUlgIh9G4NCTWFEgmR4PskO8mbX545Z2b2nTPHyTzJJ7vZ/PLuPDkz887uDPr06dNn6nIQN/C4I9exH/PKWfydEGfQKAfgFuzSPtTOTbjFunQNtfMMbrEu6Zhq5yXcYl3SMdVO0yKvcAvncBF38Alutq7Wi3yD7nDrUZYtuILfcGtU0WqRJ1iLqtmK93BrjdJaEd1FFqJuVuA53JrDtFLkKcpKbMRRHMaMfmCyCh/h1i6Tvch3rEHMMbxFOvsHum1uR8xupLOjZC+iCzvmNHTQbl5+4jhi7sPNO1mL6GDj3Umn0bAShR/YjDRH4GadrEW0T8S8g5t1tK+kWQKdqm42ylpEm12aTXBzZbTnLEKa13CzUdYi2rHT1Dk1ChuQ5iHcXJS1yAWkOQQ3N8w6pHkENxdlLXIXaXRQVS70wlcsQJpOTi1tYjF1HvkvI80yVH3+ylpE9ACYZht+wc2mvmA10pyEm3WyF9FTbMwJaJ9w8/IZOxDzAm7eyV5Ep0L8VBTdim8j3Rd0TVxC/CSUnUjXHSV7EfkAPcW6LIZ2f90I4oUdcx5ufaeVIqKZlZhvqpZprYjoz1g9xVbNrrmvMVXKtFqkcA/a5ZciZjl0dyoubB20y6gyYylS0LPUGzzA7Nz3bp9oUmasReooK1P2Z/DEFpFY5hTcnEx0ESnKDCshE19Eqjyv/RdFqmhUZGr+ia23VG6xLl1F7eililusS3vRKHrd5RbsQuNXb0X0yegjdS8qx0G/ew/69OnTZ2oyGPwDeZ5vVNjJLY4AAAAASUVORK5CYII="); /* Add a search icon to input */
+  background-position: -6px -4px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-color: black;
+  color:rgb(7, 232, 250);
+  width: 50%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: deeppink 3px solid !important;
+  border-radius: 5px !important;
+  margin-bottom: 0px; /* Add some space below the input */
+}
+
+input{
+  background-color: rgba(0,0,0,0.6);
+  color:rgb(7, 232, 250);
+  font-size: 16px; /* Increase font-size */
+  font-weight:bold;
+  padding: 10px; /* Add some padding */
+  border: #1b77e9 3px solid !important;
+  border-radius: 5px !important;
+  box-shadow: inset 0 0 2em rgba(20, 94, 255, 0.6), 0 0 2em rgba(20, 63, 255, 0.6) !important;
+}
+
+table {
+  border-collapse: collapse; /* Collapse borders */
+  width: 80%; /* Full-width */
+  /*background-color: rgba(0,0,0,0.6);*/
+  color:rgb(7, 232, 250);
+}
+
+table th, table td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+  border: #1b77e9 3px solid !important;
+  box-shadow: inset 0 0 2em rgba(20, 94, 255, 0.6), 0 0 2em rgba(20, 63, 255, 0.6) !important;
+}
+
+table tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: rgba(0,0,0,0.8);
+}
+table th{
+  background-color: rgba(0,0,0,0.8);
+}
+table tr td{
+    padding:7px;
+    background-color: rgba(0,0,0,0.6);
+}
+table{
+  margin: 20px auto;
+  
+}
+
+.active{
+    text-decoration: none;
+        -webkit-animation: neon6 0.7s ease-in-out infinite alternate;
+  -moz-animation: neon6 0.7s ease-in-out infinite alternate;
+  animation: neon6 0.7s ease-in-out infinite alternate;
+  color:rgba(255,20,100,1);
+}
+
+html {
+  background: url(https://i.imgur.com/OeUawXt.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #FFF !important;
+}
+
+.accueil_head{
+  margin: auto;
+  margin-top: 40px;
+  background-color: rgba(255,20,100,0.5);
+  width: 65%;
+  border: deeppink 3px solid;
+  border-radius: 40px 10px 40px 10px;
+  box-shadow: inset 0 0 2em rgba(255,20,100,0.6), 0 0 2em rgba(255,20,100,0.6);
+  color:white !important;
+}
+
+.lien_accueil{
+  text-align: center;
+  font-family: Monoton;
+  color:rgb(255, 255, 255);
+}
+
+label{
+  color: ghostwhite;
+  font-size: 1.4em;
+}
+
+button{
+  margin:15px;
+  height: 45px;
+  width: 200px;
+  padding:7px;
+  background-color:rgba(255,20,100,0.6) ;
+  color: #fff !important;
+  font-size: 1.2em;
+  border: #1b77e9 3px solid !important;
+  border-radius: 10% !important;
+  box-shadow: inset 0 0 2em rgba(20, 94, 255, 0.6), 0 0 2em rgba(20, 63, 255, 0.6) !important;
+
+}
+
+/* TYPO NEON PAS TOUCHER !!!!!!!!!!!!!!! */
+
+/*Neon*/
+p {
+  display:block;
+  font-size:1.6rem;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+a:hover {
+  -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon6 1.5s ease-in-out infinite alternate;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color:rgba(255,20,100,1);
+}
+p a:hover {
+  -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon6 1.5s ease-in-out infinite alternate;
+  animation: neon6 1.5s ease-in-out infinite alternate;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color:rgba(255,20,100,1);
+}
+
+
+/*glow for webkit*/
+@-webkit-keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*glow for mozilla*/
+@-moz-keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*glow*/
+@keyframes neon6 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+  }
+}
+/*REEEEEEEEEEESPONSIVE*/
+@media (max-width: 650px) {
+  #container {
+    width: 100%;
+  }
+  p {
+    font-size: 3.5em;
+  }
+}
+
+
+
+/* FIN TYPO NEON PAS TOUCHER !!!!!!!!!!!!!!! */

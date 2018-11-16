@@ -1,0 +1,8 @@
+<div *ngIf="ctrl.invalid && (ctrl.dirty || ctrl.touched)">
+  <div *ngIf="ctrl.errors.required">
+    Value is required.
+  </div>
+  <div *ngIf="ctrl.errors.minlength">
+    Value must be at least {{ctrl.errors.minlength.requiredLength}} characters.
+  </div>
+</div>

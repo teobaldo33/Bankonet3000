@@ -1,0 +1,19 @@
+<form [formGroup]="clientConnexionForm" (ngSubmit)="onSubmit()" novalidate>​
+
+  <label for="email">Votre email : </label><br>
+  <input placeholder="" formControlName="email">​<br>
+  <app-form-error [ctrl]="email"></app-form-error><br>
+  <p *ngIf="email.errors?.minlength" class="hint">
+    {{email.errors.minlength.actualLength}} / {{email.errors.minlength.requiredLength}}
+  </p>
+
+  <label for="password">Votre password : </label><br>
+  <input placeholder="" formControlName="password">​<br>
+
+  <button type="submit" [disabled]="!clientConnexionForm.valid">Submit</button>​
+
+</form>
+
+<div *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
